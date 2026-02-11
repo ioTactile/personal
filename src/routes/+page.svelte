@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { RetroButton, RetroCard, RetroSection } from '$lib/components';
 	import { enhance } from '$app/forms';
-	import { animate, hover } from 'motion';
 	import type { Action } from 'svelte/action';
 
 	let { data, form } = $props<{
@@ -94,8 +93,10 @@
 	);
 
 	const devConsoleHover: Action = (node: HTMLElement) => {
-		$effect(() => {
-			hover(node, (element) => {
+		if (import.meta.env.SSR) return;
+		let cleanup: (() => void) | undefined;
+		import('motion').then(({ animate, hover }) => {
+			cleanup = hover(node, (element) => {
 				animate(
 					element,
 					{
@@ -127,6 +128,11 @@
 				};
 			});
 		});
+		return {
+			destroy() {
+				cleanup?.();
+			}
+		};
 	};
 </script>
 

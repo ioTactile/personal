@@ -54,7 +54,7 @@
 	<html lang={locale}></html>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/svg+xml" href={favicon} />
+	<link rel="icon" type="image/png" href={favicon} />
 
 	<!-- SEO de base -->
 	<title>{app.title ?? defaultTitle}</title>
