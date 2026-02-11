@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { RetroButton, RetroCard, RetroSection } from '$lib/components';
 	import { enhance } from '$app/forms';
-	import type { Action } from 'svelte/action';
 
 	let { data, form } = $props<{
 		data: { messages: Record<string, unknown> };
@@ -91,49 +90,6 @@
 			};
 		}
 	);
-
-	const devConsoleHover: Action = (node: HTMLElement) => {
-		if (import.meta.env.SSR) return;
-		let cleanup: (() => void) | undefined;
-		import('motion').then(({ animate, hover }) => {
-			cleanup = hover(node, (element) => {
-				animate(
-					element,
-					{
-						transform: [
-							'rotate(-3deg) scale(1.02)',
-							'rotate(3deg) scale(0.98)',
-							'rotate(-2deg) scale(1.03)',
-							'rotate(0deg) scale(1)'
-						],
-						boxShadow: [
-							'8px 8px 0px rgba(43,42,42,0.9)',
-							'4px 12px 0px rgba(90,122,205,0.9)',
-							'12px 4px 0px rgba(254,176,93,0.9)',
-							'8px 8px 0px rgba(43,42,42,0.9)'
-						]
-					},
-					{ duration: 0.6 }
-				);
-
-				return () => {
-					animate(
-						element,
-						{
-							transform: 'rotate(0deg) scale(1)',
-							boxShadow: '8px 8px 0px rgba(43,42,42,0.9)'
-						},
-						{ duration: 0.25 }
-					);
-				};
-			});
-		});
-		return {
-			destroy() {
-				cleanup?.();
-			}
-		};
-	};
 </script>
 
 <section class="grid items-center gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
@@ -186,7 +142,6 @@
 
 	<div class="relative">
 		<div
-			use:devConsoleHover
 			class="flex aspect-4/3 flex-col justify-between overflow-hidden rounded-lg border-2 border-main bg-surface/95 shadow-[8px_8px_0px_rgba(43,42,42,0.9)]"
 		>
 			<div class="flex items-center justify-between border-b-2 border-main bg-primary/20 px-3 py-2">
