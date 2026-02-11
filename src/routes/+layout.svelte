@@ -3,6 +3,8 @@
 	import favicon from '$lib/assets/favicon.png';
 	import myself from '$lib/assets/myself.png';
 
+	const COPYRIGHT_YEAR = 2026;
+
 	let { children, data } = $props<{
 		children: unknown;
 		data: {
@@ -47,12 +49,15 @@
 			? 'Portfolio de Jordan Biesmans, développeur web spécialisé frontend (Next.js, React, TypeScript) — conception d’interfaces modernes, performantes et maintenables.'
 			: 'Portfolio of Jordan Biesmans, frontend-focused web developer (Next.js, React, TypeScript) — designing modern, performant and maintainable interfaces.'
 	);
+
+	$effect(() => {
+		if (typeof document !== 'undefined') {
+			document.documentElement.lang = locale;
+		}
+	});
 </script>
 
 <svelte:head>
-	<!-- Langue du document -->
-	<html lang={locale}></html>
-
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href={favicon} />
 
@@ -169,7 +174,7 @@
 						{layout.badge ?? 'Frontend / Next.js / React'}
 					</p>
 					<p>
-						© {new Date().getFullYear()} Jordan Biesmans — {layout.footer ??
+						© {COPYRIGHT_YEAR} Jordan Biesmans — {layout.footer ??
 							'Développeur web spécialisé frontend.'}
 					</p>
 				</footer>
