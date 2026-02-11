@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Jordan — Personal site",
-    "description": "Developer, maker and explorer of modern web experiences, presented in a modern interface."
+    "title": "Jordan Biesmans — Web developer",
+    "description": "Portfolio of Jordan Biesmans, frontend-focused web developer (Next.js, React, TypeScript) — designing modern, performant and maintainable interfaces."
   },
   "nav": {
     "home": "Home",

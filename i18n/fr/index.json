@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Jordan — Site personnel",
-    "description": "Développeur, maker et explorateur d’expériences web modernes, dans une interface moderne."
+    "title": "Jordan Biesmans — Développeur web",
+    "description": "Portfolio de Jordan Biesmans, développeur web spécialisé frontend (Next.js, React, TypeScript) — conception d’interfaces modernes, performantes et maintenables."
   },
   "nav": {
     "home": "Accueil",
