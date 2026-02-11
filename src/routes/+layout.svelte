@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.png';
 	import myself from '$lib/assets/myself.png';
 
 	let { children, data } = $props<{
@@ -35,20 +35,47 @@
 	);
 
 	const langQuery = $derived(`?lang=${locale}`);
+
+	const defaultTitle = $derived(
+		locale === 'fr'
+			? 'Jordan Biesmans — Développeur web frontend'
+			: 'Jordan Biesmans — Frontend web developer'
+	);
+
+	const defaultDescription = $derived(
+		locale === 'fr'
+			? 'Portfolio de Jordan Biesmans, développeur web spécialisé frontend (Next.js, React, TypeScript) — conception d’interfaces modernes, performantes et maintenables.'
+			: 'Portfolio of Jordan Biesmans, frontend-focused web developer (Next.js, React, TypeScript) — designing modern, performant and maintainable interfaces.'
+	);
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-	{#if app.title}
-		<title>{app.title}</title>
-	{/if}
-	{#if app.description}
-		<meta name="description" content={app.description} />
-	{/if}
+	<!-- Langue du document -->
+	<html lang={locale}></html>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href={favicon} />
+
+	<!-- SEO de base -->
+	<title>{app.title ?? defaultTitle}</title>
+	<meta name="description" content={app.description ?? defaultDescription} />
 	<meta name="language" content={locale} />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={app.title ?? defaultTitle} />
+	<meta property="og:description" content={app.description ?? defaultDescription} />
+	<meta property="og:image" content={myself} />
+	<meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={app.title ?? defaultTitle} />
+	<meta name="twitter:description" content={app.description ?? defaultDescription} />
+	<meta name="twitter:image" content={myself} />
 </svelte:head>
 
-<div class="bg-body font-body min-h-screen text-main">
+<div class="bg-body min-h-screen font-body text-main">
 	<div class="relative isolate">
 		<div
 			class="pointer-events-none fixed inset-0 -z-10 bg-linear-to-b from-surface/80 to-bg-body/80"
@@ -83,7 +110,7 @@
 					</div>
 
 					<div class="flex items-center gap-3">
-						<nav class="font-display hidden items-center gap-4 text-xs uppercase md:flex">
+						<nav class="hidden items-center gap-4 font-display text-xs uppercase md:flex">
 							<a
 								href={`/${langQuery}`}
 								class="rounded border border-transparent px-3 py-1 transition hover:border-secondary hover:bg-secondary/10"
