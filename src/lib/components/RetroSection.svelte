@@ -14,7 +14,7 @@
 
 <section {id} class="space-y-3">
 	{#if eyebrow}
-		<p class="font-display text-secondary text-xs tracking-[0.3em] uppercase">
+		<p class="font-display text-secondary-text text-xs tracking-[0.3em] uppercase">
 			{eyebrow}
 		</p>
 	{/if}

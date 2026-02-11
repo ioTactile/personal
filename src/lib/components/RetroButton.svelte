@@ -31,7 +31,7 @@
 		primary:
 			'bg-primary text-main border-main hover:-translate-y-px hover:shadow-[6px_6px_0px_rgba(43,42,42,0.9)] active:translate-y-px active:shadow-[2px_2px_0px_rgba(43,42,42,0.9)]',
 		secondary:
-			'border-secondary text-secondary bg-surface/60 shadow-[4px_4px_0px_rgba(90,122,205,0.7)] hover:bg-secondary/10',
+			'border-secondary-dark text-secondary-text bg-surface shadow-[4px_4px_0px_rgba(90,122,205,0.7)] hover:bg-secondary/10',
 		ghost: 'border-transparent text-main hover:border-secondary hover:bg-secondary/10 shadow-none'
 	};
 

@@ -94,14 +94,14 @@
 
 <section class="grid items-center gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
 	<div class="space-y-5">
-		<p class="font-display text-xs tracking-[0.3em] text-secondary uppercase">
+		<p class="font-display text-xs tracking-[0.3em] text-secondary-text uppercase">
 			{hero.hello ?? "Salut, c'est Jordan"}
 		</p>
 		<h1
 			class="font-display text-3xl leading-tight font-semibold text-main drop-shadow-[2px_2px_0px_rgba(0,0,0,0.6)] sm:text-4xl md:text-5xl"
 		>
 			{home.title_main ?? 'Je conçois des interfaces web'}
-			<span class="block text-secondary">
+			<span class="block text-secondary-text">
 				{home.title_accent ?? 'modernes, rapides et maintenables.'}
 			</span>
 		</h1>
@@ -122,18 +122,22 @@
 
 		<div class="mt-5 grid grid-cols-2 gap-3 text-[11px] sm:grid-cols-4 sm:text-xs">
 			<RetroCard
+				titleAs="p"
 				eyebrow={home.stats?.stack_label ?? 'Stack'}
 				title={home.stats?.stack_value ?? 'Next.js, React, Node.js, TypeScript'}
 			/>
 			<RetroCard
+				titleAs="p"
 				eyebrow={home.stats?.focus_label ?? 'Focus'}
 				title={home.stats?.focus_value ?? 'Performance, SEO, accessibilité'}
 			/>
 			<RetroCard
+				titleAs="p"
 				eyebrow={home.stats?.experience_label ?? 'Expérience'}
 				title={home.stats?.experience_value ?? '+3 ans freelance'}
 			/>
 			<RetroCard
+				titleAs="p"
 				eyebrow={home.stats?.projects_label ?? 'Projets'}
 				title={home.stats?.projects_value ?? 'Startups, PME, grands comptes'}
 			/>
@@ -157,7 +161,7 @@
 
 			<div class="space-y-1 px-4 py-3 font-mono text-xs text-main/90">
 				<p>{home.console?.line1 ?? '> npm run build:site'}</p>
-				<p class="text-secondary">
+				<p class="text-secondary-text">
 					{home.console?.line2 ?? '> deploying high-perf Next.js / React UI…'}
 				</p>
 				<p class="text-main/75">
@@ -233,10 +237,10 @@
 			</div>
 
 			<div class="space-y-3 text-[13px] sm:text-sm">
-				<p class="font-display text-xs tracking-[0.25em] text-secondary uppercase">
+				<p class="font-display text-xs tracking-[0.25em] text-secondary-text uppercase">
 					{home.about?.stack_title ?? 'Stack & outils'}
 				</p>
-				<ul class="space-y-2 rounded border border-main/60 bg-surface/90 px-4 py-3">
+				<ul class="space-y-2 rounded border border-main/60 bg-surface px-4 py-3">
 					{#each home.about?.stack_items ?? [] as item}
 						<li class="flex items-start gap-2">
 							<span class="mt-[5px] h-1.5 w-1.5 rounded-full bg-secondary"></span>
@@ -319,29 +323,29 @@
 					</p>
 				{/if}
 
-				<p class="font-display text-xs tracking-[0.25em] text-secondary uppercase">
+				<p class="font-display text-xs tracking-[0.25em] text-secondary-text uppercase">
 					{home.contact?.alt_contact?.label ?? 'Contact direct'}
 				</p>
 				<p>
 					{home.contact?.alt_contact?.email_prefix ?? 'Écrivez-moi à'}{' '}
 					<a
 						href={`mailto:${home.contact?.alt_contact?.email ?? 'jbs.io@protonmail.com'}`}
-						class="text-secondary underline underline-offset-2 hover:text-secondary/80"
+						class="text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
 					>
 						{home.contact?.alt_contact?.email ?? 'jbs.io@protonmail.com'}
 					</a>
 				</p>
 
-				<p class="font-display text-xs tracking-[0.25em] text-secondary uppercase">
+				<p class="font-display text-xs tracking-[0.25em] text-secondary-text uppercase">
 					{home.contact?.alt_contact?.links_label ?? 'Profils'}
 				</p>
-				<ul class="space-y-1">
+				<ul class="flex flex-wrap gap-3">
 					<li>
 						<a
 							href="https://github.com/ioTactile"
 							target="_blank"
 							rel="noreferrer"
-							class="text-secondary underline underline-offset-2 hover:text-secondary/80"
+							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center py-2 px-3 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
 						>
 							{home.contact?.alt_contact?.github ?? 'GitHub'}
 						</a>
@@ -351,7 +355,7 @@
 							href="https://www.linkedin.com/in/jordanbiesmans/"
 							target="_blank"
 							rel="noreferrer"
-							class="text-secondary underline underline-offset-2 hover:text-secondary/80"
+							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center py-2 px-3 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
 						>
 							{home.contact?.alt_contact?.linkedin ?? 'LinkedIn'}
 						</a>

@@ -7,6 +7,7 @@
 	src: url('$lib/assets/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -14,12 +15,17 @@
 	src: url('$lib/assets/fonts/TiltNeon-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @theme {
 	--color-bg-body: #f5f2f2;
 	--color-primary: #feb05d;
 	--color-secondary: #5a7acd;
+	/* Fond bouton actif (sélecteur de langue) : contraste WCAG avec texte blanc */
+	--color-secondary-dark: #3d5a9e;
+	/* Texte secondaire lisible sur fond clair (eyebrows, liens) */
+	--color-secondary-text: #2d3d6b;
 	--color-surface: #ffffff;
 	--color-main: #2b2a2a;
 

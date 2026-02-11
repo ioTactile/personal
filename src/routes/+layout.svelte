@@ -2,6 +2,8 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.png';
 	import myself from '$lib/assets/myself.png';
+	import myselfAvif from '$lib/assets/myself.avif';
+	import myselfWebp from '$lib/assets/myself.webp';
 
 	const COPYRIGHT_YEAR = 2026;
 
@@ -89,7 +91,7 @@
 
 		<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
 			<div
-				class="rounded-lg border-2 border-main/80 bg-surface/90 shadow-[8px_8px_0px_rgba(43,42,42,0.8)]"
+				class="rounded-lg border-2 border-main/80 bg-surface shadow-[8px_8px_0px_rgba(43,42,42,0.8)]"
 			>
 				<header
 					class="flex items-center justify-between gap-4 border-b-2 border-main/70 bg-primary/10 px-4 py-3 sm:px-6 sm:py-4"
@@ -98,14 +100,18 @@
 						<div
 							class="h-10 w-10 overflow-hidden rounded-full border-2 border-main shadow-[4px_4px_0px_rgba(43,42,42,0.8)]"
 						>
-							<img
-								src={myself}
-								alt={layout.name ?? 'Photo de profil'}
-								class="h-full w-full object-cover"
-							/>
+							<picture>
+								<source srcset={myselfAvif} type="image/avif" />
+								<source srcset={myselfWebp} type="image/webp" />
+								<img
+									src={myself}
+									alt={layout.name ?? 'Photo de profil'}
+									class="h-full w-full object-cover"
+								/>
+							</picture>
 						</div>
 						<div class="leading-tight">
-							<p class="font-display text-xs tracking-[0.2em] text-secondary uppercase">
+							<p class="font-display text-xs tracking-[0.2em] text-secondary-text uppercase">
 								{layout.name ?? 'Jordan Biesmans'}
 							</p>
 							<p class="text-xs text-main/80 sm:text-sm">
@@ -146,7 +152,7 @@
 							<a
 								href="?lang=fr"
 								class={`px-2 py-1 transition ${
-									locale === 'fr' ? 'bg-secondary text-surface' : 'text-main hover:bg-secondary/10'
+									locale === 'fr' ? 'bg-secondary-dark text-surface' : 'text-main hover:bg-secondary/10'
 								}`}
 							>
 								{layout.lang_switch_fr ?? 'FR'}
@@ -154,7 +160,7 @@
 							<a
 								href="?lang=en"
 								class={`border-l border-main/40 px-2 py-1 transition ${
-									locale === 'en' ? 'bg-secondary text-surface' : 'text-main hover:bg-secondary/10'
+									locale === 'en' ? 'bg-secondary-dark text-surface' : 'text-main hover:bg-secondary/10'
 								}`}
 							>
 								{layout.lang_switch_en ?? 'EN'}
@@ -168,7 +174,7 @@
 				</main>
 
 				<footer
-					class="flex flex-col justify-between gap-1 border-t-2 border-main/60 bg-surface/90 px-4 py-3 text-[11px] text-main/70 sm:flex-row sm:gap-3 sm:px-6 sm:py-4 sm:text-xs"
+					class="flex flex-col justify-between gap-1 border-t-2 border-main/60 bg-surface px-4 py-3 text-[11px] text-main/70 sm:flex-row sm:gap-3 sm:px-6 sm:py-4 sm:text-xs"
 				>
 					<p class="font-display tracking-[0.18em] uppercase">
 						{layout.badge ?? 'Frontend / Next.js / React'}
