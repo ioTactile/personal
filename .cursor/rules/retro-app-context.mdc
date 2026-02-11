@@ -1,0 +1,142 @@
+---
+description: Contexte et profil de Jordan Biesmans pour le site / app rétro
+alwaysApply: true
+---
+
+# Contexte – Jordan Biesmans
+
+- **Nom complet** : Jordan Biesmans  
+- **Rôle** : Développeur web / développeur full‑stack orienté frontend  
+- **Localisation** : France (actuellement basé à Laval)  
+- **Expérience** :  
+  - +3 ans d'expérience en freelance (développement frontend / full‑stack web),  
+  - +9 projets réalisés (startups, PME, grands comptes).  
+- **Mail de contact principal** : `jbs.io@protonmail.com`  
+- **GitHub** : `https://github.com/ioTactile`  
+- **LinkedIn** : `https://www.linkedin.com/in/jordanbiesmans/`
+
+Quand tu dois parler de « moi » ou du propriétaire du site, tu parles de **Jordan Biesmans**, développeur web spécialisé frontend sur l’écosystème React / Next.js.
+
+---
+
+# Stack & spécialités
+
+- **Frontend / UI** :  
+  - React.js, Next.js  
+  - TypeScript, JavaScript ES6+  
+  - Tailwind CSS, CSS moderne  
+  - Intégration fidèle de maquettes Figma, animations (Framer Motion / Motion One)
+
+- **Architecture & qualité** :  
+  - Clean Architecture, séparation claire des responsabilités  
+  - Code maintenable, lisible et testé  
+  - Accessibilité (a11y) et UX  
+  - Méthodes agiles, collaboration produit / backend / design
+
+- **Backend & infra** (orientation full‑stack) :  
+  - Node.js  
+  - APIs REST  
+  - Gestion du cache, SSR / Server Components (Next.js)
+
+- **SEO & performance** :  
+  - Développement d’applications web **SEO‑friendly**  
+  - Optimisation des temps de chargement  
+  - Gestion du rendu côté serveur (SSR) et de la mise en cache
+
+Formulation courte possible pour résumer le profil :  
+> « Développeur web Next.js / React.js / TypeScript, spécialisé dans les interfaces performantes, maintenables et SEO‑friendly. »
+
+---
+
+# Expériences & projets notables
+
+Jordan a travaillé comme **développeur frontend freelance** (VIADI – freelance) depuis 12/2023, sur des projets variés pour startups, PME et grands groupes.
+
+Projets à mettre en avant quand on a besoin d’exemples concrets :
+
+- **Adequancy**  
+  - Plateforme de management de transition.  
+  - Stack : Next.js, TypeScript, SSR, MUI, Redux.  
+  - Contributions : développement complet de la plateforme, optimisation avancée des performances et du référencement.
+
+- **Promea**  
+  - Application de gestion RH dédiée à l’inclusion des personnes en situation de handicap.  
+  - Stack : Next.js, React Query, Zustand.  
+  - Contributions : accent fort sur l’accessibilité, la qualité du code et la maintenabilité.
+
+- **Mediawan**  
+  - Refonte du site vitrine.  
+  - Stack : React, Sass, Framer Motion.  
+  - Contributions : intégration UI/UX, gestion du multilingue, animations interactives.
+
+- **Sacré Brunch**  
+  - Refonte complète du site vitrine et du back‑office.  
+  - Stack : Vue.js, TypeScript, Stripe.  
+  - Contributions : outil de gestion de salles, shop en ligne connecté à Stripe.
+
+Quand tu as besoin d’illustrer le sérieux / la crédibilité, tu peux mentionner 1 à 3 de ces projets, pas plus, de façon concise.
+
+---
+
+# Formation
+
+- **Développeur informatique bac+2**  
+  - 07/2022 – 07/2023  
+  - CESI – Reims
+
+- **Licence Administration Économique et Sociale**  
+  - 09/2017 – 07/2020  
+  - Université Croix‑Rouge – Reims
+
+---
+
+# Langues
+
+- **Français** : langue maternelle  
+- **Anglais** : courant  
+- **Chinois (mandarin)** : débutant
+
+Pour le contenu du site / app rétro :  
+- La **langue principale** est le **français**.  
+- L’anglais peut être utilisé pour des résumés courts (tagline, mots‑clés, sections bilingues), mais la priorité reste le français.
+
+---
+
+# Ton & positionnement pour le contenu
+
+Quand tu génères du contenu pour l’app rétro (texte marketing, sections « À propos », timeline, projets, CTA, etc.) :
+
+- **Ton** :  
+  - professionnel mais accessible, chaleureux, pas corporate,  
+  - confiant mais humble (éviter les superlatifs vides),  
+  - orienté **résultats concrets** (perf, SEO, accessibilité, UX, qualité du code).
+
+- **Positionnement** :  
+  - développeur web Next.js / React.js / TypeScript,  
+  - orienté frontend mais capable de gérer du full‑stack léger,  
+  - sensible à l’UX, à l’accessibilité et à la maintainabilité du code,  
+  - habitué à travailler avec des startups / PME / entreprises sur des enjeux métier réels.
+
+- **Points à faire ressortir régulièrement** :  
+  - performance, SEO, accessibilité, qualité de l’architecture frontend,  
+  - intégration propre des maquettes (Figma),  
+  - collaboration fluide avec les équipes (agile),  
+  - expérience concrète sur plusieurs projets variés.
+
+---
+
+# Consignes spécifiques pour l’app rétro
+
+- L’app rétro doit refléter :  
+  - le **côté rétro / playful** de l’UI (voir `personal-site.mdc` pour les règles de design),  
+  - mais avec un **message clair** : Jordan est un développeur sérieux, spécialisé dans les apps modernes performantes.
+- Quand tu écris des textes :  
+  - évite le jargon inutile,  
+  - privilégie des phrases courtes et impactantes,  
+  - mets en avant **ce que Jordan apporte** à un client (résultats, fiabilité, qualité du code).
+
+Si tu dois inventer des petits détails de mise en scène (timeline, petites anecdotes) pour la narration rétro, **reste crédible** et cohérent avec :  
+- le profil de développeur web,  
+- la stack (React / Next.js / TypeScript / Tailwind / Node.js),  
+- les expériences et la formation listées ci‑dessus.
+

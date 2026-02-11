@@ -1,0 +1,168 @@
+---
+description: Règles d’architecture et UI kit rétro pour le site personnel SvelteKit
+alwaysApply: true
+---
+
+# Règles générales du projet
+
+- Garder une **architecture modulaire et claire** (inspirée clean architecture).
+- Favoriser des **composants Svelte petits, testables et réutilisables**.
+- Préserver une **identité visuelle rétro cohérente** (couleurs, typo, espacements, effets).
+- Préférer la **simplicité** plutôt que la complexité technique « gratuite ».
+
+---
+
+# Architecture et organisation
+
+## Découpage logique (inspiré clean architecture)
+
+- **Présentation (UI / Svelte)**  
+  - `src/routes` : pages SvelteKit, orchestrent la vue et appellent le domaine.  
+  - `src/lib/components` : composants UI réutilisables (design system / kit UI).  
+  - `src/lib/forms` : helpers/formulaires (typo/form, schémas de validation, composants de champ).
+
+- **Domaine (logique métier)**  
+  - `src/lib/domain` : règles métier pures (sans dépendance à Svelte, DOM ou fetch direct).  
+  - Services et use-cases sous forme de fonctions pures autant que possible.
+
+- **Infrastructure**  
+  - `src/lib/infrastructure` : accès aux API, adaptateurs, implémentations concrètes.  
+  - Ne jamais importer directement l’infra dans les composants bas niveau du kit UI.
+
+## Règles d’import
+
+- Un composant de **page** (`src/routes`) peut importer :  
+  - des composants de `src/lib/components`,  
+  - des fonctions/domaines de `src/lib/domain`,  
+  - des services de `src/lib/infrastructure`.
+- Un composant **UI de base** (bouton, carte, input) :  
+  - ne dépend que de Svelte, Tailwind, et éventuellement d’utils purs (`src/lib/utils`).  
+  - ne doit pas appeler d’API, ni manipuler directement la navigation.
+
+---
+
+# Kit UI rétro – principes de design
+
+## Palette de couleurs (inspiration rétro)
+
+- **Palette de base utilisée** (issue de [`colorhunt.co`](https://colorhunt.co/palette/f5f2f2feb05d5a7acd2b2a2a)) :  
+  - `#F5F2F2` : fond clair principal (background global, sections larges),  
+  - `#FEB05D` : accent chaleureux (boutons primaires, éléments importants),  
+  - `#5A7ACD` : accent secondaire / liens (boutons secondaires, tags, liens),  
+  - `#2B2A2A` : texte principal / surfaces sombres (titres, blocs contrastés).
+- **Mapping conseillé vers les tokens Tailwind** (dans `tailwind.config.cjs` / `tailwind.config.ts`) :  
+  - `bg` / `bg-body` → `#F5F2F2`,  
+  - `primary` → `#FEB05D`,  
+  - `secondary` → `#5A7ACD`,  
+  - `surface` → `#FFFFFF` ou `#F5F2F2` avec bordures `#2B2A2A` légères,  
+  - `text-main` → `#2B2A2A`.
+- Toujours utiliser ces **couleurs via des classes Tailwind personnalisées** (ex: `bg-primary`, `text-secondary`, `text-main`) plutôt que des codes hex en dur.
+
+## Typographie
+
+- Utiliser une **typo principale rétro** (pixellisée ou monospace) pour les titres et éléments décoratifs.  
+- Utiliser une **typo secondaire plus lisible** pour les paragraphes longs.  
+- Définir les polices via Tailwind (config `theme.extend.fontFamily`) et les utiliser systématiquement :
+  - `font-display` pour les titres,  
+  - `font-body` pour le texte courant.
+
+## Grille, espacements et layout
+
+- Utiliser une **grille cohérente** (8px ou 4px scale) via les espaces Tailwind (`space-y-*`, `gap-*`, `p-*`, `m-*`).  
+- Ne pas utiliser de marges/espacements « magiques » (ex: `mt-[13px]`) sauf cas très spécial.  
+- Garder un **layout responsive** en gardant en tête :
+  - mobile d’abord (`min-w`, `flex`, `grid`, `gap`),  
+  - tailles max contenues (`max-w-screen-md/lg`) pour la lecture.
+
+## Motions et effets rétro
+
+- **Librairie d’animation** :
+  - Utiliser l’écosystème Framer via le package `motion` (Motion One) pour les animations déclaratives dans Svelte.
+  - Encapsuler les animations dans des **composants ou helpers dédiés** (ex: `src/lib/components/motion`, `src/lib/utils/motion.ts`) plutôt que de saupoudrer du code d’animation partout.
+- Effets autorisés :
+  - **Scanlines / grain léger**,  
+  - **Glow néon** modéré (via `shadow-*`, `drop-shadow`, `text-shadow` si besoin),  
+  - **Transitions courtes** (`transition`, `duration-150/200`) pour hover/focus,  
+  - Entrées/sorties douces (fade, slide léger, scale subtil) avec `motion`.
+- Toujours respecter l’**accessibilité** :
+  - ne pas utiliser d’animations trop rapides ou agressives en continu,  
+  - s’assurer que les contrastes sont suffisants,  
+  - respecter `prefers-reduced-motion` (désactiver ou simplifier les animations pour ces utilisateurs).
+
+---
+
+# Composants du kit UI
+
+## Principes
+
+- Un composant du kit UI doit :
+  - exposer une **API simple et explicite via les props**,  
+  - être **stylistiquement cohérent** avec le thème rétro (aucune couleur / typo hors tokens),  
+  - gérer les **états standards** (hover, focus, disabled, loading) de façon cohérente.
+- Préférer des **composants composables** :
+  - par ex. `Button`, `Card`, `Section`, `Badge`, `Input`, `Textarea`, `Select`, `Navbar`, `Footer`, `Tag`, etc.
+
+## Usage Tailwind
+
+- Garder les classes Tailwind :
+  - **lisibles et groupées par rôle** (layout, couleur, typo, effets).  
+  - extraites en **classes utilitaires** ou **components** dans Tailwind si un pattern revient souvent.
+- Ne pas mélanger trop de responsabilités dans un seul composant :  
+  - si un composantfait à la fois layout complexe + logique métier + formulaires, le découper.
+
+---
+
+# Formulaires, validation et accessibilité
+
+- Centraliser la logique de formulaire dans `src/lib/forms` :
+  - schémas de validation,  
+  - types,  
+  - helpers (par ex. mapping des erreurs vers l’UI).
+- Tous les champs de formulaire doivent :
+  - avoir un **label explicite**,  
+  - exposer les **erreurs de validation** avec un style cohérent,  
+  - respecter les **états d’accessibilité** (`aria-*`, `role` si nécessaire).
+- Ne jamais cacher une erreur importante uniquement par la couleur ; utiliser aussi un **texte clair**.
+
+---
+
+# Internationalisation (i18n)
+
+- **Librairie** : utiliser `typesafe-i18n` pour obtenir des traductions typées dans tout le projet.
+- **Organisation des fichiers** :
+  - Fichiers de ressources brutes (JSON) sous `i18n/<locale>/index.json` (`en`, `fr`, etc.).  
+  - Utilitaires et types i18n sous `src/lib/i18n` (`locales.ts`, helpers Svelte).
+- **Locales supportées de base** :
+  - `fr` (par défaut),  
+  - `en`.
+- **Règles d’usage** :
+  - Ne jamais mettre de texte « dur » dans les composants de page pour les éléments principaux (titres, navigation, CTA, sections).  
+  - Toujours passer par les clés de traduction et les helpers de `src/lib/i18n`.  
+  - Garder des **clés structurées** par feature (ex: `hero.hello`, `nav.projects`, `app.title`).
+- **Routing / détection de langue** :
+  - La langue par défaut est le français (`fr`).  
+  - La langue peut être surchargée par un paramètre d’URL (`?lang=en`) ou plus tard via un sélecteur de langue dans l’UI.  
+  - Toute nouvelle page / section importante doit proposer les deux langues dès sa création ou très rapidement après.
+
+---
+
+# Bonnes pratiques générales
+
+- **Lisibilité > cleverness** : privilégier un code clair plutôt que des astuces ou patterns complexes inutiles.
+- **Fichiers courts** : si un composant dépasse ~200 lignes, envisager un découpage.
+- **Nommer explicitement** :
+  - composants : `RetroButton`, `RetroCard`, `RetroSection` si pertinent pour le design system,  
+  - fonctions : `loadProjects`, `formatDateForTimeline` plutôt que `doStuff`.
+- **Tests et robustesse** :
+  - pour les fonctions de domaine importantes, écrire des tests unitaires simples si la stack le permet.
+
+---
+
+# Quand tu modifies du code
+
+- Respecter :
+  - cette architecture (UI / domaine / infra séparés),  
+  - les tokens du kit UI (couleurs, typo, espacements),  
+  - la cohérence des composants (mêmes états, mêmes comportements).
+- Si une nouvelle section UI ou un nouveau composant ne correspond pas au thème rétro ou à ces règles, **le refactorer** pour l’aligner avant d’ajouter des fonctionnalités supplémentaires.
+

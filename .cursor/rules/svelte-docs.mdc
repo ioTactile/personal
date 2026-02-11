@@ -1,0 +1,14 @@
+---
+description: Toujours s'appuyer sur la documentation officielle Svelte
+alwaysApply: true
+---
+
+# Référence Svelte
+
+- **Source de vérité** : pour toute question liée à Svelte ou SvelteKit (API, runes, snippets, slots, routing, formulaires, stores, etc.), toujours s'appuyer en priorité sur la documentation officielle :
+  - `https://svelte.dev/docs`
+  - `https://svelte.dev/docs/kit/introduction`
+- **Migration / compatibilité** : en cas de doute entre Svelte 3/4 et Svelte 5, consulter la partie migration et les sections spécifiques à la version actuelle dans cette même doc.
+- **Décisions** : si plusieurs approches sont possibles, privilégier celles qui sont :
+  - recommandées ou illustrées dans la doc officielle,
+  - compatibles avec Svelte 5 (runes, `{@render}`, snippets, etc.).
