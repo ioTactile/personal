@@ -11,7 +11,6 @@
   },
   "hero": {
     "hello": "Hello, I'm Jordan",
-    "tagline": "I craft modern digital experiences, presented in a modern interface.",
     "cta_primary": "View my projects",
     "cta_secondary": "Learn more about me"
   },
@@ -77,7 +76,7 @@
           "name": "Reboat",
           "role": "Marketing site",
           "stack": "Next.js, Directus, SSR, TypeScript, Tailwind CSS",
-          "impact": "Implementation of several reusable components on Directus to allow the client to create its own pages with the content and order of the components of its choice.",
+          "impact": "Creation of a modular system of custom components in Directus, giving the client full autonomy in building and organizing their pages.",
           "meta": "Project for a boat rental service.",
           "url": "https://reboat.com"
         },
@@ -119,7 +118,7 @@
       "title": "A frontend developer who thinks in products",
       "intro": "I’m Jordan Biesmans, a web developer focused on the React / Next.js / TypeScript ecosystem. I design modern interfaces that are built to be fast, accessible and maintainable.",
       "highlights": [
-        "Over 3 years of freelance experience on projects for startups, SMBs and large companies.",
+        "Over 3 years of experience, 2 of which are freelance, on projects for startups, SMBs and large companies.",
         "Used to collaborating with product, design and backend teams in agile environments.",
         "Strong focus on frontend architecture quality, SEO, performance and accessibility."
       ],

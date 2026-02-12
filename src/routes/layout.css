@@ -27,6 +27,7 @@
 	/* Texte secondaire lisible sur fond clair (eyebrows, liens) */
 	--color-secondary-text: #2d3d6b;
 	--color-surface: #ffffff;
+	--color-card: #fff7ec;
 	--color-main: #2b2a2a;
 
 	--font-body:

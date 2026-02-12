@@ -152,7 +152,9 @@
 							<a
 								href="?lang=fr"
 								class={`px-2 py-1 transition ${
-									locale === 'fr' ? 'bg-secondary-dark text-surface' : 'text-main hover:bg-secondary/10'
+									locale === 'fr'
+										? 'bg-secondary-dark text-surface'
+										: 'text-main hover:bg-secondary/10'
 								}`}
 							>
 								{layout.lang_switch_fr ?? 'FR'}
@@ -160,7 +162,9 @@
 							<a
 								href="?lang=en"
 								class={`border-l border-main/40 px-2 py-1 transition ${
-									locale === 'en' ? 'bg-secondary-dark text-surface' : 'text-main hover:bg-secondary/10'
+									locale === 'en'
+										? 'bg-secondary-dark text-surface'
+										: 'text-main hover:bg-secondary/10'
 								}`}
 							>
 								{layout.lang_switch_en ?? 'EN'}

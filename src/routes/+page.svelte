@@ -105,11 +105,11 @@
 				{home.title_accent ?? 'modernes, rapides et maintenables.'}
 			</span>
 		</h1>
-		<p class="max-w-xl text-sm text-main/85 sm:text-base">
+		<!-- <p class="max-w-xl text-sm text-main/85 sm:text-base">
 			{hero.tagline ??
 				home.body ??
-				'Développeur web spécialisé Next.js / React / TypeScript, je crée des expériences numériques modernes, pensées pour les besoins actuels : performance, SEO, accessibilité et qualité du code.'}
-		</p>
+				'Développeur web spécialisé Next.js, React, TypeScript, je crée des expériences numériques modernes, pensées pour les besoins actuels : performance, SEO, accessibilité et qualité du code.'}
+		</p> -->
 
 		<div class="flex flex-wrap gap-3 pt-2">
 			<RetroButton href="#projects" variant="primary">
@@ -120,7 +120,7 @@
 			</RetroButton>
 		</div>
 
-		<div class="mt-5 grid grid-cols-2 gap-3 text-[11px] sm:grid-cols-4 sm:text-xs">
+		<!-- <div class="mt-5 grid grid-cols-2 gap-3 text-xs sm:grid-cols-4 sm:text-sm">
 			<RetroCard
 				titleAs="p"
 				eyebrow={home.stats?.stack_label ?? 'Stack'}
@@ -141,7 +141,7 @@
 				eyebrow={home.stats?.projects_label ?? 'Projets'}
 				title={home.stats?.projects_value ?? 'Startups, PME, grands comptes'}
 			/>
-		</div>
+		</div> -->
 	</div>
 
 	<div class="relative">
@@ -345,7 +345,7 @@
 							href="https://github.com/ioTactile"
 							target="_blank"
 							rel="noreferrer"
-							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center py-2 px-3 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
+							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-3 py-2 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
 						>
 							{home.contact?.alt_contact?.github ?? 'GitHub'}
 						</a>
@@ -355,7 +355,7 @@
 							href="https://www.linkedin.com/in/jordanbiesmans/"
 							target="_blank"
 							rel="noreferrer"
-							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center py-2 px-3 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
+							class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-3 py-2 text-secondary-text underline underline-offset-2 hover:text-secondary-text/80"
 						>
 							{home.contact?.alt_contact?.linkedin ?? 'LinkedIn'}
 						</a>
